@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watch</title>
+<style>
+    body{
+        background-color: lightblue;
+    }
+
+  .watch {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: pink;
+    border: 5px solid #333;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    margin-left: 200px;
+  }
+
+  .watch-number {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+  }
+
+  .watch-number:nth-child(1) { top: 0px; left: 90px; }
+  .watch-number:nth-child(2) { top: 90px; left: 180px; }
+  .watch-number:nth-child(3) { top: 180px; right: 90px; }
+  .watch-number:nth-child(4) { bottom: 90px; right: 180px; }
+
+  .hour-hand,.minute-hand,.second-hand {
+                                         position: absolute;
+                                         transform-origin: 50% 50%;
+                                         background-color: orange;
+  }
+
+  .hour-hand {
+    width: 6px;
+    height: 50px;
+    background-color: orangered;
+  }
+
+  .minute-hand {
+    width: 4px;
+    height: 70px;
+    background-color: blue;
+  }
+
+  .second-hand {
+    width: 2px;
+    height: 140px;
+    background-color: red;
+  }
+
+  .center-dot {
+    width: 12px;
+    height: 12px;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .hour-hand {
+    animation: rotate 20s linear infinite; 
+  }
+
+  .minute-hand {
+    animation: rotate 10s linear infinite; 
+  }
+
+  .second-hand {
+    animation: rotate 5s linear infinite; 
+  }
+
+.div1{
+    
+    position: absolute;
+    animation: linear infinite;
+    animation-name: run;
+    animation-duration: 5s;
+    animation-direction: reverse;
+}
+
+
+@keyframes run {
+  0%   {left: 0px; top: 0px;}
+  25%  {left: 400px; top: 0px;}
+  50%  {left: 400px; top: 400px;}
+  75%  {left: 0px; top: 400px;}
+  100% {left: 0px; top: 0px;}
+}
+
+.img1{
+    border-radius: 100%;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="watch">
+  <div class="watch-number">12</div>
+  <div class="watch-number">3</div>
+  <div class="watch-number">6</div>
+  <div class="watch-number">9</div>
+  <div class="center-dot"></div>
+  <div class="hour-hand"></div>
+  <div class="minute-hand"></div>
+  <div class="second-hand"></div>
+</div>
+<div class="div1">
+         <img class="img1" src="../Images/Car.jpg" height="100px" width="230px"></div>
+</div>
+</body>
+</html>
